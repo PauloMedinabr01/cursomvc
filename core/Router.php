@@ -11,7 +11,9 @@ class Router
 
     public function __construct()
     {
-        
+        $router = $this->url();
+        echo '<pre>';
+        print_r($router);
     }
 
     private function url()
