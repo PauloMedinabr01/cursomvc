@@ -4,9 +4,18 @@ namespace app\controllers;
 
 class Site
 {
-    public function home($foto)
+    public function home()
     {
-        $photo = $foto;
         require_once __DIR__ . '/../views/home.php';
+    }
+
+    public function cadastro()
+    {
+        require_once __DIR__ . '/../views/cadastro.php';
+    }
+
+    public function consulta()
+    {
+        require_once __DIR__ . '/../views/consulta.php';
     }
 }
