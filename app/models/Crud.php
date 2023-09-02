@@ -22,6 +22,15 @@ class Crud extends Connection
 
     public function read()
     {
+
+        $conn = $this->connect();
+        $sql = "SELECT * FROM tb_person ORDER BY nome)";
+
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+
+        $result = $stmt->fetchAll();
+        return $result;
     }
 
 
