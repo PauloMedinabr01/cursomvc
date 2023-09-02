@@ -12,8 +12,12 @@ class Router
     public function __construct()
     {
         $router = $this->url();
-        echo '<pre>';
-        print_r($router);
+
+        if (file_exists('app/controllers/' . ucfirst($router[0]) . '.php')) :
+            echo 'Arquivo existe.';
+        else :
+            echo 'Arquivo não existe.';
+        endif;
     }
 
     private function url()
