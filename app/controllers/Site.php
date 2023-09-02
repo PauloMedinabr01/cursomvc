@@ -6,6 +6,6 @@ class Site
 {
     public function home()
     {
-        echo "Este é o metodo home da classe Site!";
+        require_once __DIR__ . '/../views/home.php';
     }
 }
