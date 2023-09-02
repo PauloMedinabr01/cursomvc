@@ -1,3 +1,3 @@
 <?php
 
-echo "teste php no wsl";
+echo "Curso MVC";
