@@ -4,9 +4,11 @@
     </div>
 
     <div class="col s12">
-        <form action="?router=Site/editar/" method="post">
+        <form action="?router=Site/alterar/" method="post">
 
             <?php foreach ($editarForm as $registro) : ?>
+
+                <input type="hidden" name="id" value="<?php echo $registro['id'] ?>">
 
                 <div class="input-field col s12 m6">
                     <input type="text" name="nome" id="nome" value="<?php echo $registro['nome'] ?>" required>
