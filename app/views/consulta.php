@@ -3,13 +3,28 @@
         <h3 class="light">Página Consulta</h3>
     </div>
     <div class="col s12">
-        <?php foreach ($consulta as $registro) : ?>
 
-            <p>
-                Nome: <?php echo $registro['nome'] ?> <br>
-                E-mail: <?php echo $registro['email'] ?> <br>
-            </p>
+        <table>
+            <tr>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Ações</th>
+            </tr>
 
-        <?php endforeach; ?>
+            <?php foreach ($consulta as $registro) : ?>
+
+                <tr>
+                    <td><?php echo $registro['nome'] ?></td>
+                    <td><?php echo $registro['email'] ?></td>
+                    <td>
+                        <a href="?router=Site/editar/&id=<?php echo $registro['id'] ?>">Editar</a>
+                        <a href="?router=Site/delete/&id=<?php echo $registro['id'] ?>">Deletar</a>
+                    </td>
+                </tr>
+
+            <?php endforeach; ?>
+
+        </table>
+
     </div>
 </div>

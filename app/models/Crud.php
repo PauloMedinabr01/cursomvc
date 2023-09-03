@@ -10,7 +10,7 @@ class Crud extends Connection
         $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
 
         $conn = $this->connect();
-        $sql = "INSERT INTO tb_person (nome, email) VALUES (:nome, :email)";
+        $sql = "INSERT INTO tb_person VALUES(DEFAULT, :nome, :email)";
 
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':nome', $nome);
