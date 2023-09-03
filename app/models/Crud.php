@@ -41,4 +41,19 @@ class Crud extends Connection
     public function delete()
     {
     }
+
+    public function editForm()
+    {
+        $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS);
+
+        $conn = $this->connect();
+        $sql = "SELECT * FROM tb_person WHERE id = :id";
+
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+
+        $result = $stmt->fetchAll();
+        return $result;
+    }
 }
