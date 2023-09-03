@@ -18,7 +18,7 @@
                     <td><?php echo $registro['email'] ?></td>
                     <td>
                         <a href="?router=Site/editar/&id=<?php echo base64_encode($registro['id']) ?>">Editar</a>
-                        <a href="?router=Site/delete/&id=<?php echo base64_encode($registro['id']) ?>" class="red-text">Deletar</a>
+                        <a href="?router=Site/confirmaDelete/&id=<?php echo base64_encode($registro['id']) ?>" class="red-text">Deletar</a>
                     </td>
                 </tr>
 
