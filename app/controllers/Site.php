@@ -2,7 +2,9 @@
 
 namespace app\controllers;
 
-class Site
+use app\models\Crud;
+
+class Site extends Crud
 {
     public function home()
     {
@@ -11,11 +13,13 @@ class Site
 
     public function cadastro()
     {
+        $cadastro = $this->create();
         require_once __DIR__ . '/../views/cadastro.php';
     }
 
     public function consulta()
     {
+        $consulta = $this->read();
         require_once __DIR__ . '/../views/consulta.php';
     }
 }

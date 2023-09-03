@@ -4,7 +4,6 @@ namespace app\models;
 
 abstract class Connection
 {
-
     private $dbname = 'mysql:host=localhost;dbname=cursomvc';
     private $user = 'root';
     private $password = '2909';

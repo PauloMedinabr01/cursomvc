@@ -10,7 +10,7 @@ class Crud extends Connection
         $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
 
         $conn = $this->connect();
-        $sql = "INSERT INTO tb_person VALUES(DEFAULT, :nome, :email)";
+        $sql = "INSERT INTO tb_person (nome, email) VALUES (:nome, :email)";
 
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':nome', $nome);
@@ -22,9 +22,8 @@ class Crud extends Connection
 
     public function read()
     {
-
         $conn = $this->connect();
-        $sql = "SELECT * FROM tb_person ORDER BY nome)";
+        $sql = "SELECT * FROM tb_person ORDER BY nome";
 
         $stmt = $conn->prepare($sql);
         $stmt->execute();
