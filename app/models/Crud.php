@@ -44,7 +44,7 @@ class Crud extends Connection
 
     public function editForm()
     {
-        $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS);
+        $id = base64_decode(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS));
 
         $conn = $this->connect();
         $sql = "SELECT * FROM tb_person WHERE id = :id";
